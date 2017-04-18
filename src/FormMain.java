@@ -23,12 +23,6 @@ import java.util.Map;
  */
 public class FormMain {
     public FormMain() {
-        textArea1.setLineWrap(true);        //激活自动换行功能
-        textArea1.setWrapStyleWord(true);            // 激活断行不断字功能
-
-//        scroll.setVerticalScrollBarPolicy(
-//                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-
         taskidButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -103,6 +97,7 @@ public class FormMain {
                     content = message.getFailed() + "错误代码:" + message.getErr_no();
                 }
 
+                scroll.setViewportView(textArea1);
 //                panel1.add(new JScrollPane(textArea1));
                 textArea1.setText(content);
             }
@@ -147,8 +142,19 @@ public class FormMain {
     private JTextField textField3;
     private JButton taskidButton;
     private JTextField textField4;
-//    private JScrollPane scroll = new JScrollPane(textArea1);
+    private JPanel panel4;
+    private JScrollPane scroll;
+//    private JScrollPane scroll;
+//    JScrollPane scroll = new JScrollPane(textArea1);
 
 
 
+
+//    private void createUIComponents() {
+//        // TODO: place custom component creation code here
+//        JScrollPane scroll = new JScrollPane(textArea1);
+//        panel1.add(scroll);
+//        scroll.setVerticalScrollBarPolicy(
+//                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//    }
 }
